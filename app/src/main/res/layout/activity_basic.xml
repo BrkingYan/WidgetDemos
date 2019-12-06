@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntentDemo.BasicActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/finish_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="finish activity"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/background_login">
+        <Button
+            android:id="@+id/goto_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="goto sub and send data"/>
+        <TextView
+            android:id="@+id/data_from_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/visit_baidu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="visit baidu.com"/>
+
+
+</LinearLayout>

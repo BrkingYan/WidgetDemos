@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yy.widgetdemos">
+
+    <!-- 使用网络的权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- receiver for broadcast -->
+        <receiver
+            android:name=".BroadcastDemo.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.example.yy.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <!-- provider for share db table -->
+
+        <provider
+            android:name=".SaveDataDemo.DatabaseProvider"
+            android:authorities="com.example.yy.dbprovider"
+            android:enabled="true"
+            android:exported="true"> <!-- 是否提供给外部应用 -->
+        </provider>
+
+        <!-- provider for take photo -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.yy.photoprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- save data Activity about SQLite -->
+        <activity android:name=".SaveDataDemo.SaveDataActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- Basic Activity to launch sub Activity -->
+        <activity android:name=".IntentDemo.BasicActivity">
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- Sub Activity to echo message to basic activity -->
+        <activity android:name=".IntentDemo.SubActivity">
+            <intent-filter>
+
+                <!-- 下述定义用于隐式intent -->
+                <!-- 方式一 -->
+                <action android:name="com.example.yy.ACTION_START_SUB" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.yy.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+
+        <!-- Web Page Activity -->
+        <activity android:name=".IntentDemo.WebPageActivity">
+            <intent-filter>
+
+                <!-- 方式二 -->
+                <!--
+                这样设置的话，当试图打开一个网页，系统会让用户选择一个打开方式，
+                系统浏览器或者该Activity
+                -->
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+
+        <!-- Local Broadcast Activity -->
+        <activity android:name=".BroadcastDemo.LocalCastActivity" />
+
+        <!-- Broadcast Activity to send broadcast -->
+        <activity android:name=".BroadcastDemo.CastActivity" />
+
+        <!-- use SQLite with Litepal framework -->
+        <activity android:name=".SaveDataDemo.Litepal.LitepalActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- IPC Activities -->
+        <activity android:name=".IPCdemo.IPCActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".IPCdemo.IPC2Activity"
+            android:process=":remote2" />
+        <activity
+            android:name=".IPCdemo.IPC3Activity"
+            android:process=".remote3" />
+
+        <!-- to use camera and gallery -->
+        <activity android:name=".MediaDemo.UseMediaActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- to use http -->
+        <activity android:name=".IntentDemo.HttpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

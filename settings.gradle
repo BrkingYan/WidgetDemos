@@ -1,0 +1,1 @@
+include ':app', ':service', ':material_design', ':fast_json', ':cool_weather', ':db_flow', ':retrofit'

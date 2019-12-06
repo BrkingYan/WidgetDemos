@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/json_to_obj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="json to obj"/>
+
+    <Button
+        android:id="@+id/obj_to_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="obj to json"/>
+
+    <Button
+        android:id="@+id/json_to_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="json to List"/>
+
+    <Button
+        android:id="@+id/list_to_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List to json"/>
+
+</LinearLayout>

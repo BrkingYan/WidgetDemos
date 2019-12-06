@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="250dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+    <EditText
+        android:id="@+id/sql_text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:minLines="8"
+        android:maxLines="10"
+        android:gravity="top"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="取消"
+            android:textSize="15dp"
+            android:layout_gravity="left"/>
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="确定" />
+    </LinearLayout>
+
+</LinearLayout>
